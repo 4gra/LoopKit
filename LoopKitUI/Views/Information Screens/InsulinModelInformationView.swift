@@ -37,7 +37,7 @@ public struct InsulinModelInformationView: View {
     }
     
     private var diaInfo: Text {
-        Text(LocalizedString("\(appName) assumes that the insulin it has delivered is actively working to lower your glucose for 6 hours. This setting cannot be changed.", comment: "Information about insulin action duration"))
+        Text(LocalizedString("\(appName) assumes that the insulin it has delivered is actively working to lower your glucose for a variable length of time.", comment: "Information about insulin action duration"))
     }
     
     private var modelPeakInfo: some View {

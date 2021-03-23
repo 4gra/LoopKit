@@ -70,7 +70,7 @@ public extension TherapySetting {
         case .deliveryLimits:
             return "\(DeliveryLimits.Setting.maximumBasalRate.localizedDescriptiveText(appName: appName))\n\n\(DeliveryLimits.Setting.maximumBolus.localizedDescriptiveText(appName: appName))"
         case .insulinModel:
-            return String(format: LocalizedString("For fast acting insulin, %1$@ assumes it is actively working for 6 hours. You can choose from different models for the peak activity.", comment: "Descriptive text for fast acting insulin model (1: app name)"), appName)
+            return String(format: LocalizedString("For fast acting insulin, %1$@ assumes it is actively working as shown below. You can choose from different models.", comment: "Descriptive text for fast acting insulin model (1: app name)"), appName)
         case .carbRatio:
             return LocalizedString("Your Carb Ratio is the number of grams of carbohydrates covered by one unit of insulin.", comment: "Descriptive text for carb ratio")
         case .insulinSensitivity:

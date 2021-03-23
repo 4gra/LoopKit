@@ -8,6 +8,7 @@
 public enum ExponentialInsulinModelPreset: String, Codable {
     case rapidActingAdult
     case rapidActingChild
+    case fasterAdult
     case fiasp
 }
 
@@ -20,6 +21,8 @@ extension ExponentialInsulinModelPreset {
             return .minutes(360)
         case .rapidActingChild:
             return .minutes(360)
+        case .fasterAdult:
+            return .minutes(210)
         case .fiasp:
             return .minutes(360)
         }
@@ -30,6 +33,8 @@ extension ExponentialInsulinModelPreset {
         case .rapidActingAdult:
             return .minutes(75)
         case .rapidActingChild:
+            return .minutes(65)
+        case .fasterAdult:
             return .minutes(65)
         case .fiasp:
             return .minutes(55)

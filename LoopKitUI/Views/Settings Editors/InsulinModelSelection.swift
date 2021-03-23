@@ -161,6 +161,14 @@ public struct InsulinModelSelection: View {
                 .padding(.vertical, 4)
                 .padding(.bottom, 4)
 
+                CheckmarkListItem(
+                    title: Text(InsulinModelSettings.exponentialPreset(.fasterAdult).title),
+                    description: Text(InsulinModelSettings.exponentialPreset(.fasterAdult).subtitle),
+                    isSelected: isSelected(.exponentialPreset(.fasterAdult))
+                )
+                .padding(.vertical, 4)
+                .padding(.bottom, 4)
+
             }
             .buttonStyle(PlainButtonStyle()) // Disable row highlighting on selection
         }
@@ -171,7 +179,7 @@ public struct InsulinModelSelection: View {
         let spellOutFormatter = NumberFormatter()
         spellOutFormatter.numberStyle = .spellOut
         let modelCountString = spellOutFormatter.string(from: selectableInsulinModelSettings.count as NSNumber)!
-        return Text(String(format: LocalizedString("For fast acting insulin, %1$@ assumes it is actively working for 6 hours. You can choose from %2$@ different models for how the app measures the insulin’s peak activity.", comment: "Insulin model setting description (1: app name) (2: number of models)"), appName, modelCountString))
+        return Text(String(format: LocalizedString("For fast acting insulin, %1$@ assumes it is actively working according to the model. You can choose from %2$@ different models for how the app measures the insulin’s duration and peak activity.", comment: "Insulin model setting description (1: app name) (2: number of models)"), appName, modelCountString))
     }
 
     var insulinModelChart: InsulinModelChart {
@@ -181,7 +189,8 @@ public struct InsulinModelSelection: View {
     var selectableInsulinModelSettings: [InsulinModelSettings] {
         var options: [InsulinModelSettings] =  [
             .exponentialPreset(.rapidActingAdult),
-            .exponentialPreset(.rapidActingChild)
+            .exponentialPreset(.rapidActingChild),
+            .exponentialPreset(.fasterAdult),
         ]
 
         return options
