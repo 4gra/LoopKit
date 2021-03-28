@@ -100,7 +100,8 @@ public struct SuspendThresholdEditor: View {
                                 value: self.$value.animation(),
                                 unit: displayGlucoseUnitObservable.displayGlucoseUnit,
                                 guardrail: viewModel.guardrail,
-                                bounds: viewModel.guardrail.absoluteBounds.lowerBound...viewModel.maxSuspendThresholdValue
+                                /// intentionally broad placeholder bounds, just to assist lazy devs like me in transition.  Throw away...
+                                bounds: viewModel.guardrail.absoluteBounds.lowerBound...HKQuantity(unit: HKUnit.millimolesPerLiter, doubleValue: 6.0)
                             )
                             // Prevent the picker from expanding the card's width on small devices
                             .frame(maxWidth: UIScreen.main.bounds.width - 48)

@@ -151,16 +151,18 @@ public struct GlucoseRangePicker: View {
     }
 
     var lowerBoundRange: ClosedRange<HKQuantity> {
-        let min = minValue.map { Swift.max(guardrail.absoluteBounds.lowerBound, $0) }
-            ?? guardrail.absoluteBounds.lowerBound
-        let max = Swift.min(guardrail.absoluteBounds.upperBound, upperBound)
-        return min...max
+        /// intentionally broad placeholder bounds, just to assist lazy devs like me in transition.  Throw away...
+        //let min = minValue.map { Swift.max(guardrail.absoluteBounds.lowerBound, $0) }
+        //    ?? guardrail.absoluteBounds.lowerBound
+        //let max = Swift.min(guardrail.absoluteBounds.upperBound, upperBound)
+        return HKQuantity(unit: HKUnit.millimolesPerLiter, doubleValue: 3.0)...HKQuantity(unit: HKUnit.millimolesPerLiter, doubleValue: 12.0)
     }
 
     var upperBoundRange: ClosedRange<HKQuantity> {
-        let min = max(guardrail.absoluteBounds.lowerBound, lowerBound)
-        let max = maxValue.map { Swift.min(guardrail.absoluteBounds.upperBound, $0) }
-            ?? guardrail.absoluteBounds.upperBound
-        return min...max
+        /// intentionally broad placeholder bounds, just to assist lazy devs like me in transition.  Throw away...
+        //let min = max(guardrail.absoluteBounds.lowerBound, lowerBound)
+        //let max = maxValue.map { Swift.min(guardrail.absoluteBounds.upperBound, $0) }
+        //    ?? guardrail.absoluteBounds.upperBound
+        return HKQuantity(unit: HKUnit.millimolesPerLiter, doubleValue: 3.0)...HKQuantity(unit: HKUnit.millimolesPerLiter, doubleValue: 12.0)
     }
 }
