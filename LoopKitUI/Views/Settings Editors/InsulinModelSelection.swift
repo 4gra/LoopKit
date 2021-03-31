@@ -171,6 +171,22 @@ public struct InsulinModelSelection: View {
                 .padding(.vertical, 4)
                 .padding(.bottom, 4)
 
+                CheckmarkListItem(
+                    title: Text(InsulinModelSettings.exponentialPreset(.fasterAdult40).title),
+                    description: Text(InsulinModelSettings.exponentialPreset(.fasterAdult40).subtitle),
+                    isSelected: isSelected(.exponentialPreset(.fasterAdult40))
+                )
+                .padding(.vertical, 4)
+                .padding(.bottom, 4)
+
+                CheckmarkListItem(
+                    title: Text(InsulinModelSettings.exponentialPreset(.fasterAdult45).title),
+                    description: Text(InsulinModelSettings.exponentialPreset(.fasterAdult45).subtitle),
+                    isSelected: isSelected(.exponentialPreset(.fasterAdult45))
+                )
+                .padding(.vertical, 4)
+                .padding(.bottom, 4)
+
             }
             .buttonStyle(PlainButtonStyle()) // Disable row highlighting on selection
         }
@@ -193,6 +209,8 @@ public struct InsulinModelSelection: View {
             .exponentialPreset(.rapidActingAdult),
             .exponentialPreset(.rapidActingChild),
             .exponentialPreset(.fasterAdult),
+            .exponentialPreset(.fasterAdult40),
+            .exponentialPreset(.fasterAdult45),
         ]
 
         return options

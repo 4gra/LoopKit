@@ -111,6 +111,10 @@ extension InsulinModelSettings: RawRepresentable {
                 self = .exponentialPreset(ExponentialInsulinModelPreset.rapidActingChild)
             case "fasterAdult":
                 self = .exponentialPreset(ExponentialInsulinModelPreset.fasterAdult)
+            case "fasterAdult40":
+                self = .exponentialPreset(ExponentialInsulinModelPreset.fasterAdult40)
+            case "fasterAdult45":
+                self = .exponentialPreset(ExponentialInsulinModelPreset.fasterAdult45)
             default:
                 return nil
             }
@@ -158,6 +162,10 @@ public extension InsulinModelSettings {
             self = .exponentialPreset(.rapidActingChild)
         case .fasterAdult:
             self = .exponentialPreset(.fasterAdult)
+        case .fasterAdult40:
+            self = .exponentialPreset(.fasterAdult40)
+        case .fasterAdult45:
+            self = .exponentialPreset(.fasterAdult45)
         case .walsh:
             self = .walsh(WalshInsulinModel(actionDuration: storedSettingsInsulinModel.actionDuration))
         }
@@ -179,6 +187,10 @@ public extension StoredInsulinModel {
                 modelType = .rapidChild
             case .fasterAdult:
                 modelType = .fasterAdult
+            case .fasterAdult40:
+                modelType = .fasterAdult40
+            case .fasterAdult45:
+                modelType = .fasterAdult45
             case .fiasp:
                 modelType = .fiasp
             }

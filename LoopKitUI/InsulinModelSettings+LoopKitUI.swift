@@ -36,7 +36,11 @@ public extension ExponentialInsulinModelPreset {
         case .rapidActingChild:
             return LocalizedString("Rapid-Acting – Children", comment: "Title of insulin model preset - rapid acting children")
         case .fasterAdult:
-            return LocalizedString("Faster-Acting (3.5h)", comment: "Title of insulin model preset - rapid acting adult")
+            return LocalizedString("Faster-Acting (3.5h)", comment: "Title of insulin model preset - faster adult (3.5)")
+        case .fasterAdult40:
+            return LocalizedString("Faster-Acting (4h)", comment: "Title of insulin model preset - faster adult (4)")
+        case .fasterAdult45:
+            return LocalizedString("Faster-Acting (4.5h)", comment: "Title of insulin model preset - faster adult (4.5)")
         case .fiasp:
             return LocalizedString("Fiasp", comment: "Title of insulin model preset - fiasp")
         }
@@ -49,7 +53,11 @@ public extension ExponentialInsulinModelPreset {
         case .rapidActingChild:
             return LocalizedString("This model assumes peak insulin activity at 65 minutes.", comment: "Subtitle of Rapid-Acting – Children preset")
         case .fasterAdult:
-            return LocalizedString("This model assumes 210 minute action and peak at 65 minutes.", comment: "Subtitle of Rapid-Acting – Faster preset")
+            return LocalizedString("This model assumes 210 minute action and peak at 65 minutes.", comment: "Subtitle of Rapid-Acting – 3.5 preset")
+        case .fasterAdult40:
+            return LocalizedString("This model assumes 240 minute action and peak at 65 minutes.", comment: "Subtitle of Rapid-Acting – 4.0 preset")
+        case .fasterAdult45:
+            return LocalizedString("This model assumes 270 minute action and peak at 65 minutes.", comment: "Subtitle of Rapid-Acting – 4.5 preset")
         case .fiasp:
             return LocalizedString("This model assumes peak insulin activity at 55 minutes.", comment: "Subtitle of Fiasp preset")
         }

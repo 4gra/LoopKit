@@ -14,6 +14,8 @@ public struct StoredInsulinModel: Codable, Equatable {
         case rapidAdult
         case rapidChild
         case fasterAdult
+        case fasterAdult40
+        case fasterAdult45
         case walsh
     }
 
